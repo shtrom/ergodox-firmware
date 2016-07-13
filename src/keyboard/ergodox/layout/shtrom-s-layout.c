@@ -102,7 +102,7 @@ KB_MATRIX_LAYER(
 	0,	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	0,	0,	
-	0,	0,	0,	0,	KEY_Menu,	
+	MEDIAKEY_PREV_TRACK,	MEDIAKEY_PLAY_PAUSE,	MEDIAKEY_NEXT_TRACK,	0,	KEY_Menu,	
 	1,	0,	
 	0,	0,	0,	
 	0,	0,	0	
@@ -337,7 +337,7 @@ KB_MATRIX_LAYER(
 	ktrans,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	ktrans,	
 	ktrans,	NULL,	NULL,	NULL,	NULL,	NULL,	ktrans,	
-	NULL,	NULL,	NULL,	ktrans,	kprrel,	
+	kprrel,	kprrel,	kprrel,	ktrans,	kprrel,	
 	lpop1,	ktrans,	
 	ktrans,	NULL,	NULL,	
 	ktrans,	ktrans,	ktrans	
@@ -572,7 +572,7 @@ KB_MATRIX_LAYER(
 	ktrans,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	ktrans,	
 	ktrans,	NULL,	NULL,	NULL,	NULL,	NULL,	ktrans,	
-	NULL,	NULL,	NULL,	ktrans,	kprrel,	
+	kprrel,	kprrel,	kprrel,	ktrans,	kprrel,	
 	NULL,	ktrans,	
 	ktrans,	NULL,	NULL,	
 	ktrans,	ktrans,	ktrans	
