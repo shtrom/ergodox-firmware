@@ -75,12 +75,12 @@ KB_MATRIX_LAYER(
 	0,	0,	KEY_PageUp,	
 	KEY_Spacebar,	KEY_Dash_Underscore,	KEY_PageDown,	
 	// right hand
-	KEY_DeleteForward,	KEY_6_Caret,	KEY_7_Ampersand,	KEY_8_Asterisk,	KEY_9_LeftParenthesis,	KEY_0_RightParenthesis,	KEY_Backslash_Pipe,	
+	KEY_DeleteForward,	KEY_6_Caret,	KEY_7_Ampersand,	KEY_8_Asterisk,	KEY_9_LeftParenthesis,	KEY_0_RightParenthesis,	KEY_RightBracket_RightBrace,	
 	KEY_DeleteBackspace,	KEY_y_Y,	KEY_u_U,	KEY_i_I,	KEY_o_O,	KEY_p_P,	KEY_SingleQuote_DoubleQuote,	
 	KEY_h_H,	KEY_j_J,	KEY_k_K,	KEY_l_L,	KEY_Semicolon_Colon,	KEY_RightShift,	
 	KEY_ReturnEnter,	KEY_n_N,	KEY_m_M,	KEY_Comma_LessThan,	KEY_Period_GreaterThan,	KEY_Slash_Question,	KEY_RightControl,	
 	KEY_RightAlt,	KEY_LeftArrow,	KEY_RightArrow,	KEY_PrintScreen,	KEY_RightGUI,	
-	1,	KEY_RightBracket_RightBrace,	
+	1,	KEY_Backslash_Pipe,	
 	KEY_UpArrow,	0,	0,	
 	KEY_DownArrow,	KEY_Equal_Plus,	KEY_Spacebar	
 ),
