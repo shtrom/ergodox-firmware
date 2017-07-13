@@ -61,35 +61,37 @@ void kbfun_layer_pop_all(void) {
 
 // LAYOUT ---------------------------------------------------------------------
 const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
-// LAYER 0
+// LAYER 0: QWERTY, with a few weird keys so they work well in Dvorak
 KB_MATRIX_LAYER(
 	// unused
 	0,
 	// left hand
-	KEY_GraveAccent_Tilde,	KEY_1_Exclamation,	KEY_2_At,	KEY_3_Pound,	KEY_4_Dollar,	KEY_5_Percent,	KEY_Escape,
-	KEY_Tab,	KEY_q_Q,	KEY_w_W,	KEY_e_E,	KEY_r_R,	KEY_t_T,	KEY_DeleteBackspace,
-	KEY_LeftShift,	KEY_a_A,	KEY_s_S,	KEY_d_D,	KEY_f_F,	KEY_g_G,
-	KEY_LeftControl,	KEY_z_Z,	KEY_x_X,	KEY_c_C,	KEY_v_V,	KEY_b_B,	KEY_ReturnEnter,
-	KEY_LeftGUI,	KEY_SysReq_Attention,	KEY_Home,	KEY_End,	KEY_LeftAlt,
-	KEY_LeftBracket_LeftBrace,	2,
-	0,	0,	KEY_PageUp,
-	KEY_Spacebar,	KEY_Dash_Underscore,	KEY_PageDown,
+	_grave,	_1,	_2,	_3,	_4,	_5,	_esc,
+	_tab,	_Q,	_W,	_E,	_R,	_T,	_bs,
+	_shiftL,_A,	_S,	_D,	_F,	_G,
+	_ctrlL,	_Z,	_X,	_C,	_V,	_B,	_enter,
+	_guiL,	_sysReq,_home,	_end,	_altL,
+	// left thumb
+		_bracketL,2,
+	0,	0,	_pageU,
+	_space,	_dash,	_pageD,
 	// right hand
-	KEY_DeleteForward,	KEY_6_Caret,	KEY_7_Ampersand,	KEY_8_Asterisk,	KEY_9_LeftParenthesis,	KEY_0_RightParenthesis,	KEY_RightBracket_RightBrace,
-	KEY_DeleteBackspace,	KEY_y_Y,	KEY_u_U,	KEY_i_I,	KEY_o_O,	KEY_p_P,	KEY_SingleQuote_DoubleQuote,
-	KEY_h_H,	KEY_j_J,	KEY_k_K,	KEY_l_L,	KEY_Semicolon_Colon,	KEY_RightShift,
-	KEY_ReturnEnter,	KEY_n_N,	KEY_m_M,	KEY_Comma_LessThan,	KEY_Period_GreaterThan,	KEY_Slash_Question,	KEY_RightControl,
-	KEY_RightAlt,	KEY_LeftArrow,	KEY_RightArrow,	KEY_PrintScreen,	KEY_RightGUI,
-	1,	KEY_Backslash_Pipe,
-	KEY_UpArrow,	0,	0,
-	KEY_DownArrow,	KEY_Equal_Plus,	KEY_Spacebar
+	_del,	_6,	_7,	_8,	_9,	_0,		_bracketR,
+	_bs,	_Y,	_U,	_I,	_O,	_P,		_quote,
+		_H,	_J,	_K,	_L,	_semicolon,	_shiftR,
+	_enter,	_N,	_M,	_comma,	_period,_slash,		_ctrlR,
+			_altR,	_arrowL,_arrowR,_print,		_guiR,
+	// right thumb
+	1,	_backslash,
+	_arrowU,	0,	0,
+	_arrowD,	_equal,	_space
 ),
-// LAYER 1
+// LAYER 1: Media and shortcut keys
 KB_MATRIX_LAYER(
 	// unused
 	0,
 	// left hand
-	0,	KEY_F1,	KEY_F2,	KEY_F3,	KEY_F4,	KEY_F5,	KEY_F11,
+	0,	_F1,	_F2,	_F3,	_F4,	_F5,	_F11,
 	0,	0,	0,	0,	0,	0,	0,
 	0,	0,	0,	0,	0,	0,
 	0,	0,	KEY_Cut,	KEY_Copy,	KEY_Paste,	0,	0,
@@ -98,7 +100,7 @@ KB_MATRIX_LAYER(
 	0,	0,	0,
 	0,	0,	0,
 	// right hand
-	KEY_F12,	KEY_F6,	KEY_F7,	KEY_F8,	KEY_F9,	KEY_F10,	KEY_Power,
+	_F12,	_F6,	_F7,	_F8,	_F9,	_F10,	KEY_Power,
 	0,	0,	0,	0,	0,	0,	0,
 	0,	0,	0,	0,	0,	0,
 	0,	0,	0,	0,	0,	0,	0,
@@ -107,24 +109,24 @@ KB_MATRIX_LAYER(
 	0,	0,	0,
 	0,	0,	0
 ),
-// LAYER 2
+// LAYER 2: Additional function keys and keypad
 KB_MATRIX_LAYER(
 	// unused
 	0,
 	// left hand
 	0,	0,	0,	KEY_CapsLock,	KEY_ScrollLock,	0,	0,
-	0,	0,	KEY_Home,	KEY_UpArrow,	KEY_PageUp,	0,	0,
-	0,	0,	KEY_LeftArrow,	0,	KEY_RightArrow,	0,
-	0,	0,	KEY_End,	KEY_DownArrow,	KEY_PageDown,	0,	0,
-	0,	0,	0,	KEY_Insert,	KEY_DeleteForward,
+	0,	0,	_home,	_arrowU,	_pageU,	0,	0,
+	0,	0,	_arrowL,	0,	_arrowR,	0,
+	0,	0,	_end,	_arrowD,	_pageD,	0,	0,
+	0,	0,	0,	KEY_Insert,	_del,
 	0,	2,
 	0,	0,	0,
 	0,	0,	0,
 	// right hand
 	0,	0,	KEYPAD_NumLock_Clear,	KEYPAD_Slash,	KEYPAD_Asterisk,	KEYPAD_Minus,	0,
 	0,	0,	KEYPAD_7_Home,	KEYPAD_8_UpArrow,	KEYPAD_9_PageUp,	KEYPAD_Plus,	0,
-	0,	KEYPAD_4_LeftArrow,	KEYPAD_5,	KEYPAD_6_RightArrow,	KEYPAD_Plus,	0,
-	0,	0,	KEYPAD_1_End,	KEYPAD_2_DownArrow,	KEYPAD_3_PageDown,	KEY_ReturnEnter,	0,
+		0,	KEYPAD_4_LeftArrow,	KEYPAD_5,	KEYPAD_6_RightArrow,	KEYPAD_Plus,	0,
+	0,	0,	KEYPAD_1_End,	KEYPAD_2_DownArrow,	KEYPAD_3_PageDown,	_enter,	0,
 	KEYPAD_0_Insert,	KEYPAD_0_Insert,	KEYPAD_Period_Delete,	0,	0,
 	2,	0,
 	0,	0,	0,
@@ -541,13 +543,13 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
-	kprrel,	lpop2,
+		kprrel,	lpop2,
 	NULL,	NULL,	kprrel,
 	kprrel,	kprrel,	kprrel,
 	// right hand
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
-	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
+		kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	lpop1,	kprrel,
