@@ -47,13 +47,18 @@ void layer_to_led(int layer)
 }
 
 // Template functions to set LEDs on and off
+// BUG: L1/2 p/r then other key p/r -> LED stays on
 #define led_layer(layer) \
 	void llpush ## layer (void) { \
 		kbfun_layer_push_ ## layer (); \
-		layer_to_led(layer); \
+		layer_to_led(main_layers_peek(main_arg_layer_offset)); \
 	} \
 	void llpop ## layer (void) { \
 		kbfun_layer_pop_ ## layer (); \
+		layer_to_led(main_layers_peek(main_arg_layer_offset)); \
+	} \
+	void llsticky ## layer (void) { \
+		kbfun_layer_sticky_ ## layer (); \
 		layer_to_led(main_layers_peek(main_arg_layer_offset)); \
 	}
 
@@ -133,7 +138,7 @@ KB_MATRIX_LAYER(
 	0,	0,	KEY_Cut,	KEY_Copy,	KEY_Paste,	0,	0,
 	0,	0,	KEY_Mute,	KEY_VolumeDown,	KEY_VolumeUp,
 	// left thumb
-		0,	1,
+		0,	3,
 	0,	0,	0,
 	0,	0,	0,
 	// right hand
@@ -168,7 +173,7 @@ KB_MATRIX_LAYER(
 	0,	0,	KEYPAD_1_End,	KEYPAD_2_DownArrow,	KEYPAD_3_PageDown,	_enter,	0,
 	KEYPAD_0_Insert,	KEYPAD_0_Insert,	KEYPAD_Period_Delete,	0,	0,
 	// right thumb
-	2,	0,
+	3,	0,
 	0,	0,	0,
 	0,	0,	0
 ),
@@ -363,7 +368,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	// left thumb
-		kprrel,	llpush2,
+		kprrel,	llsticky2,
 	NULL,	NULL,	kprrel,
 	kprrel,	kprrel,	kprrel,
 	// right hand
@@ -373,7 +378,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	// right thumb
-	llpush1,kprrel,
+	llsticky1,kprrel,
 	kprrel,	NULL,	NULL,
 	kprrel,	kprrel,	kprrel
 ),
@@ -383,12 +388,12 @@ KB_MATRIX_LAYER(
 	NULL,
 	// left hand
 	dbtldr,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
-	llpush3,	NULL,	NULL,	NULL,	NULL,	NULL,	ktrans,
-	llpop3,	NULL,	NULL,	NULL,	NULL,	NULL,
+	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	ktrans,
+	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,
 	ktrans,	NULL,	kprrel,	kprrel,	kprrel,	NULL,	ktrans,
 	ktrans,	ktrans,	kprrel,	kprrel,	kprrel,
 	// left thumb
-		ktrans,	llpush1,
+		ktrans,	lpush3,
 	NULL,	NULL,	ktrans,
 	ktrans,	ktrans,	ktrans,
 	// right hand
@@ -398,7 +403,7 @@ KB_MATRIX_LAYER(
 	ktrans,	NULL,	NULL,	NULL,	NULL,	NULL,	ktrans,
 	kprrel,	kprrel,	kprrel,	ktrans,	kprrel,
 	// right thumb
-	llpop1,	ktrans,
+	llsticky1,	ktrans,
 	ktrans,	NULL,	NULL,
 	ktrans,	ktrans,	ktrans
 ),
@@ -413,7 +418,7 @@ KB_MATRIX_LAYER(
 	ktrans,	NULL,	kprrel,	kprrel,	kprrel,	NULL,	ktrans,
 	ktrans,	ktrans,	ktrans,	kprrel,	kprrel,
 	// left thumb
-		ktrans,	llpop2,
+		ktrans,	llsticky2,
 	NULL,	NULL,	ktrans,
 	ktrans,	ktrans,	ktrans,
 	// right hand
@@ -423,7 +428,7 @@ KB_MATRIX_LAYER(
 	ktrans,	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	ktrans,
 	kprrel,	kprrel,	kprrel,	ktrans,	ktrans,
 	// right thumb
-	llpush2,	ktrans,
+	lpop3,	ktrans,
 	ktrans,	NULL,	NULL,
 	ktrans,	ktrans,	ktrans
 ),
@@ -438,7 +443,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	// left thumb
-		kprrel,	llpush2,
+		kprrel,	llsticky2,
 	NULL,	NULL,	kprrel,
 	kprrel,	kprrel,	kprrel,
 	// right hand
@@ -448,7 +453,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	// right thumb
-	llpush1,	kprrel,
+	llsticky1,	kprrel,
 	kprrel,	NULL,	NULL,
 	kprrel,	kprrel,	kprrel
 ),
@@ -618,7 +623,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	// left thumb
-		kprrel,	llpop2,
+		kprrel,	llsticky2,
 	NULL,	NULL,	kprrel,
 	kprrel,	kprrel,	kprrel,
 	// right hand
@@ -628,7 +633,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	// right thumb
-	llpop1,	kprrel,
+	llsticky1,	kprrel,
 	kprrel,	NULL,	NULL,
 	kprrel,	kprrel,	kprrel
 ),
@@ -693,7 +698,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	// left thumb
-		kprrel,	llpop2,
+		kprrel,	llsticky2,
 	NULL,	NULL,	kprrel,
 	kprrel,	kprrel,	kprrel,
 	// right hand
@@ -703,7 +708,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	// right thumb
-	llpop1,	kprrel,
+	llsticky1,	kprrel,
 	kprrel,	NULL,	NULL,
 	kprrel,	kprrel,	kprrel
 ),
