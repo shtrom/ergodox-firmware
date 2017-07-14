@@ -393,7 +393,7 @@ KB_MATRIX_LAYER(
 	// left hand
 	dbtldr,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	ktrans,
-	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,
+	ktrans,	NULL,	NULL,	NULL,	NULL,	NULL,
 	ktrans,	NULL,	kprrel,	kprrel,	kprrel,	NULL,	ktrans,
 	ktrans,	ktrans,	kprrel,	kprrel,	kprrel,
 	// left thumb
@@ -417,7 +417,7 @@ KB_MATRIX_LAYER(
 	NULL,
 	// left hand
 	NULL,	NULL,	NULL,	kprrel,	kprrel,	NULL,	ktrans,
-	ktrans,	NULL,	kprrel,	kprrel,	kprrel,	NULL,	ktrans,
+	NULL,	NULL,	kprrel,	kprrel,	kprrel,	NULL,	ktrans,
 	ktrans,	NULL,	kprrel,	NULL,	kprrel,	NULL,
 	ktrans,	NULL,	kprrel,	kprrel,	kprrel,	NULL,	ktrans,
 	ktrans,	ktrans,	ktrans,	kprrel,	kprrel,
@@ -447,7 +447,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	// left thumb
-		kprrel,	llsticky2,
+		kprrel,	lpush2,
 	NULL,	NULL,	kprrel,
 	kprrel,	kprrel,	kprrel,
 	// right hand
@@ -457,7 +457,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	// right thumb
-	llsticky1,	kprrel,
+	lpush1,	kprrel,
 	kprrel,	NULL,	NULL,
 	kprrel,	kprrel,	kprrel
 ),
@@ -647,8 +647,8 @@ KB_MATRIX_LAYER(
 	NULL,
 	// left hand
 	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
-	kprrel,	NULL,	NULL,	NULL,	NULL,	NULL,	ktrans,
-	kprrel,	NULL,	NULL,	NULL,	NULL,	NULL,
+	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	ktrans,
+	ktrans,	NULL,	NULL,	NULL,	NULL,	NULL,
 	ktrans,	NULL,	kprrel,	kprrel,	kprrel,	NULL,	ktrans,
 	ktrans,	ktrans,	kprrel,	kprrel,	kprrel,
 	// left thumb
@@ -672,7 +672,7 @@ KB_MATRIX_LAYER(
 	NULL,
 	// left hand
 	NULL,	NULL,	NULL,	kprrel,	kprrel,	NULL,	ktrans,
-	ktrans,	NULL,	kprrel,	kprrel,	kprrel,	NULL,	ktrans,
+	NULL,	NULL,	kprrel,	kprrel,	kprrel,	NULL,	ktrans,
 	ktrans,	NULL,	kprrel,	NULL,	kprrel,	NULL,
 	ktrans,	NULL,	kprrel,	kprrel,	kprrel,	NULL,	ktrans,
 	ktrans,	ktrans,	ktrans,	kprrel,	kprrel,
@@ -702,7 +702,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	// left thumb
-		kprrel,	llsticky2,
+		kprrel,	lpop2,
 	NULL,	NULL,	kprrel,
 	kprrel,	kprrel,	kprrel,
 	// right hand
@@ -712,7 +712,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	// right thumb
-	llsticky1,	kprrel,
+	lpop1,	kprrel,
 	kprrel,	NULL,	NULL,
 	kprrel,	kprrel,	kprrel
 ),
