@@ -47,7 +47,6 @@ void layer_to_led(int layer)
 }
 
 // Template functions to set LEDs on and off
-// BUG: L1/2 p/r then other key p/r -> LED stays on
 #define led_layer(layer) \
 	void llpush ## layer (void) { \
 		kbfun_layer_push_ ## layer (); \
@@ -61,6 +60,11 @@ void layer_to_led(int layer)
 		kbfun_layer_sticky_ ## layer (); \
 		layer_to_led(main_layers_peek(main_arg_layer_offset)); \
 	}
+// Make sure the LEDs are updated for when a key is p/r after a sticky key
+void lkbfun_press_release() {
+	kbfun_press_release();
+	layer_to_led(main_layers_peek(main_arg_layer_offset));
+}
 
 // Declare the function for the first 3 alternative layers
 led_layer(1);
@@ -68,7 +72,7 @@ led_layer(2);
 led_layer(3);
 
 // DEFINITIONS ----------------------------------------------------------------
-#define  kprrel   &kbfun_press_release
+#define  kprrel   &lkbfun_press_release
 #define  ktog     &kbfun_toggle
 #define  ktrans   &kbfun_transparent
 #define  lpush1   &kbfun_layer_push_1
