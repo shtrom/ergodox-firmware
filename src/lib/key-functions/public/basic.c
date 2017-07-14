@@ -125,9 +125,9 @@ static void layer_push(uint8_t local_id) {
 
 static void layer_sticky(uint8_t local_id) {
 	uint8_t keycode = kb_layout_get(LAYER, ROW, COL);
+	uint8_t topLayer = main_layers_peek(0);
+	uint8_t topSticky = main_layers_peek_sticky(0);
 	if (IS_PRESSED) {
-		uint8_t topLayer = main_layers_peek(0);
-		uint8_t topSticky = main_layers_peek_sticky(0);
 		layer_pop(local_id);
 		if (topLayer == local_id) {
 			if (topSticky == eStickyOnceUp)
@@ -142,8 +142,6 @@ static void layer_sticky(uint8_t local_id) {
 			main_arg_any_non_trans_key_pressed = false;
 		}
 	} else {
-		uint8_t topLayer = main_layers_peek(0);
-		uint8_t topSticky = main_layers_peek_sticky(0);
 		if (topLayer == local_id) {
 			if (topSticky == eStickyOnceDown) {
 				// When releasing this sticky key, pop the layer always
