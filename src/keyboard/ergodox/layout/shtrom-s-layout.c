@@ -117,9 +117,9 @@ KB_MATRIX_LAYER(
 	_ctrlL,	_Z,	_X,	_C,	_V,	_B,	_enter,
 	_guiL,	_sysReq,_home,	_end,	_altL,
 	// left thumb
-		_bracketL,2,
+		_backslash,2,
 	0,	0,	_pageU,
-	_space,	_dash,	_pageD,
+	_space,	_dash,	_pageD,		// _dash is {[ in dvorak
 	// right hand
 	_del,	_6,	_7,	_8,	_9,	_0,		_bracketR,
 	_bs,	_Y,	_U,	_I,	_O,	_P,		_quote,
@@ -127,9 +127,9 @@ KB_MATRIX_LAYER(
 	_enter,	_N,	_M,	_comma,	_period,_slash,		_ctrlR,
 			_altR,	_arrowL,_arrowR,_print,		_guiR,
 	// right thumb
-	1,	_backslash,
+	1,	_bracketL,		// _bracketL is slash in dvorak
 	_arrowU,	0,	0,
-	_arrowD,	_equal,	_space
+	_arrowD,	_equal,	_space	// _equal is }] in dvorak
 ),
 // LAYER 1: Media and shortcut keys
 KB_MATRIX_LAYER(
@@ -192,7 +192,7 @@ KB_MATRIX_LAYER(
 	_ctrlL,	_semicolon,_Q,	_J,	_K,	_X,	_enter,
 	_guiL,	_sysReq,_home,	_end,	_altL,
 	// left thumb
-		_slash,2,
+		_backslash,2,
 	0,	0,	_pageU,
 	_space, _bracketL,_pageD,
 	// right hand
@@ -202,7 +202,7 @@ KB_MATRIX_LAYER(
 	_enter,	_B,	_M,	_W,	_V,	_Z,	_ctrlR,
 			_altR,	_arrowL,_arrowR,_print,	_guiR,
 	// right thumb
-	1,	_backslash,
+	1,	_slash,
 	_arrowU,	0,	0,
 	_arrowD,	_bracketR,	_space
 ),
