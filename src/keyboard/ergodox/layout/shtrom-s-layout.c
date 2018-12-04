@@ -112,7 +112,7 @@ KB_MATRIX_LAYER(
 	0,
 	// left hand
 	_grave,	_1,	_2,	_3,	_4,	_5,	_esc,
-	_tab,	_Q,	_W,	_E,	_R,	_T,	_bs,
+	_tab,	_Q,	_W,	_E,	_R,	_T,	_tab,
 	_shiftL,_A,	_S,	_D,	_F,	_G,
 	_ctrlL,	_Z,	_X,	_C,	_V,	_B,	_enter,
 	_guiL,	_sysReq,_home,	_end,	_altL,
