@@ -136,15 +136,15 @@ KB_MATRIX_LAYER(
 	// unused
 	0,
 	// left hand
-	0,	_F1,	_F2,	_F3,	_F4,	_F5,	_F11,
-	3,	0,	0,	0,	0,	0,	0,
-	3,	0,	0,	0,	0,	0,
+	3,	_F1,	_F2,	_F3,	_F4,	_F5,	_F11,
+	0,	0,	0,	0,	0,	0,	0,
+	0,	0,	0,	0,	0,	0,
 	0,	0,	KEY_Cut,	KEY_Copy,	KEY_Paste,	0,	0,
-	0,	0,	KEY_Mute,	KEY_VolumeDown,	KEY_VolumeUp,
+	0,	0,	KEY_Mute,	KEY_VolumeDown,	KEY_Mute,
 	// left thumb
-		0,	3,
-	0,	0,	0,
-	0,	0,	0,
+		0,	1,
+	0,	0,	KEY_VolumeUp,
+	0,	0,	KEY_VolumeDown,
 	// right hand
 	_F12,	_F6,	_F7,	_F8,	_F9,	_F10,	KEY_Power,
 	0,	0,	0,	0,	0,	0,	0,
@@ -152,7 +152,7 @@ KB_MATRIX_LAYER(
 	0,	0,	0,	0,	0,	0,	0,
 	MEDIAKEY_PREV_TRACK,	MEDIAKEY_PLAY_PAUSE,	MEDIAKEY_NEXT_TRACK,	0,	KEY_Menu,
 	// right thumb
-	1,	0,
+	3,	0,
 	0,	0,	0,
 	0,	0,	0
 ),
@@ -161,13 +161,13 @@ KB_MATRIX_LAYER(
 	// unused
 	0,
 	// left hand
-	0,	0,	0,	KEY_CapsLock,	KEY_ScrollLock,	0,	0,
+	3,	0,	0,	KEY_CapsLock,	KEY_ScrollLock,	0,	0,
 	0,	0,	_home,	_arrowU,	_pageU,	0,	0,
 	0,	0,	_arrowL,	0,	_arrowR,	0,
 	0,	0,	_end,	_arrowD,	_pageD,	0,	0,
 	0,	0,	0,	KEY_Insert,	_del,
 	// left thumb
-		0,	2,
+		0,	3,
 	0,	0,	0,
 	0,	0,	0,
 	// right hand
@@ -177,7 +177,7 @@ KB_MATRIX_LAYER(
 	0,	0,	KEYPAD_1_End,	KEYPAD_2_DownArrow,	KEYPAD_3_PageDown,	_enter,	0,
 	KEYPAD_0_Insert,	KEYPAD_0_Insert,	KEYPAD_Period_Delete,	0,	0,
 	// right thumb
-	3,	0,
+	2,	0,
 	0,	0,	0,
 	0,	0,	0
 ),
